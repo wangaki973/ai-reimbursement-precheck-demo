@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI报销预审助手 Demo</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <div class="chat-page">
+      <header class="chat-header">
+        <h1>报销预审助手</h1>
+      </header>
+
+      <main class="layout-grid">
+        <section class="chat-shell">
+          <div class="chat-top">
+            <div class="employee-card">
+              <p class="employee-name">华东销售部 · 王晓明（EID-SLS-0268）</p>
+            </div>
+            <div class="top-stats">
+              <div class="stat-box">
+                <p class="stat-label">本月驳回率</p>
+                <p class="stat-value">9.8%</p>
+              </div>
+              <div class="stat-box">
+                <p class="stat-label">平均审核时长</p>
+                <p class="stat-value">2.1 分钟</p>
+              </div>
+            </div>
+          </div>
+
+          <div id="chatList" class="chat-list"></div>
+
+          <form id="replyForm" class="reply-form hidden" novalidate>
+            <div id="dynamicFields" class="dynamic-fields"></div>
+            <div id="fieldErrorsList" class="error-list"></div>
+          </form>
+
+          <div id="actionStrip" class="action-strip hidden">
+            <p id="actionHint" class="action-hint"></p>
+            <button id="retryBtn" class="retry-btn hidden" type="button">重试预算校验</button>
+          </div>
+
+          <div class="composer">
+            <input id="photoInput" type="file" accept="image/*" class="hidden" />
+            <button id="voiceBtn" class="icon-btn" type="button" aria-label="语音输入">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3a3 3 0 0 1 3 3v5a3 3 0 1 1-6 0V6a3 3 0 0 1 3-3Z"></path>
+                <path d="M19 10a7 7 0 1 1-14 0"></path>
+                <path d="M12 17v4"></path>
+                <path d="M9 21h6"></path>
+              </svg>
+            </button>
+            <textarea
+              id="messageInput"
+              rows="1"
+              placeholder=""
+            ></textarea>
+            <button id="photoBtn" class="icon-btn plus-btn" type="button" aria-label="拍照或上传">+</button>
+          </div>
+        </section>
+
+        <aside class="sidebar">
+          <div class="sidebar-scroll">
+            <section class="side-card">
+              <h3>常用问询</h3>
+              <ul class="query-list">
+                <li><button type="button" class="query-btn">上周我的差旅费超标了多少？</button></li>
+                <li><button type="button" class="query-btn">我近三个月的报销有没有异常？</button></li>
+                <li><button type="button" class="query-btn">如果把北京住宿标准降到 500 元，能省多少？</button></li>
+              </ul>
+            </section>
+
+            <section class="side-card">
+              <h3>近期表现</h3>
+              <div class="status-tags">
+                <span class="tag tag-green">合规通过 72%</span>
+                <span class="tag tag-yellow">预警提示 18%</span>
+                <span class="tag tag-red">风险拦截 10%</span>
+              </div>
+              <p class="metric">本月提交：<strong>32 单</strong></p>
+              <p class="metric">一次通过率：<strong>78.1%</strong></p>
+              <p class="metric">当前报销状态：<strong>正常</strong></p>
+            </section>
+
+            <section class="side-card">
+              <h3>额度提示</h3>
+              <p class="metric">本月可用额度：<strong>¥30,000</strong></p>
+              <p class="metric">已用额度：<strong>¥18,600</strong></p>
+              <p class="metric">剩余额度：<strong>¥11,400</strong></p>
+            </section>
+
+            <section class="side-card">
+              <h3>帮助反馈</h3>
+              <p class="help-item">在线客服：企业服务台</p>
+              <p class="help-item">联系电话：400-800-1234</p>
+              <p class="help-item">邮箱：finance-support@example.com</p>
+            </section>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <script src="./js/mock-api.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
